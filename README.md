@@ -10,3 +10,6 @@ echo "keyserver hkps://keyserver.ubuntu.com" >> $HOME/.gnupg/gpg.conf
 https://github.com/polybar/polybar/wiki
 
 #My polybar config
+<p align="center">
+  <img src="1.png" alt="Polybar">
+</p>
