@@ -9,8 +9,10 @@ export ZSH="/home/su/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="gnzh"
-ZSH_THEME="fino"
+#ZSH_THEME="fino"
 #ZSH_THEME="alanpeabody"
+#ZSH_THEME="avit"
+ZSH_THEME="sonicradish"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -105,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 
 #		clean unwanted dependencies 
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
-
+alias cc='paccache -r'
 #		mount/umount filesystems
 alias mount-sda1='sudo mount /dev/sda1 /mnt/drives/sda1'
 alias umount-sda1='sudo umount /mnt/drives/sda1' 
@@ -204,9 +206,20 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 #mounting the folder Public for exchange between host and guest on virtualbox
 alias vbm="sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Public"
 
+#cmus
+alias cmus_s="cmus"
+
 ############################################################### alias #####################################################
 
 # start with startx
 if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep i3 || startx
 fi
+
+#Appinventor
+APPINVENTOR=/usr/google/appinventor/commands-for-Appinventor
+export PATH=$PATH:$APPINVENTOR
+
+export PATH="/home/su/.flutter_install/flutter/bin:$PATH"
+
+
