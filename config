@@ -1,20 +1,4 @@
 ;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
 
 [colors]
 ;background = ${xrdb:color0:#222}
@@ -22,20 +6,27 @@ background = #33222222
 background-alt = #33444444
 ;foreground = ${xrdb:color7:#222}
 foreground = #ffffff
-foreground-alt = #80ffffdf
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+foreground-alt = #ffff1a
+unmount = #80ffff1a
+primary = #66ffb3
+secondary =#ff3300
+alert = #bd6640
+cyan = #00BCD4
+red = #FF5252
+yellow = #C9BC0E
+lightgreen = #4DB6AC
+green = #23ff00
+grey = #475359
 
 [bar/example]
 
 enable-ipc = true
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 25
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 0
+radius = 10
 fixed-center = false
 
 
@@ -45,7 +36,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 0
+border-size = 5
 border-color = #00000000
 
 padding-left = 0
@@ -63,9 +54,9 @@ font-5 = Font Awesome 5 Brands:solid:pixelsize=10;2
 
 modules-left = i3
 modules-center = cmus
-modules-right = cmus filesystem pulseaudio xkeyboard memory cpu eth battery  date  powermenu
+modules-right = filesystem pulseaudio xkeyboard memory cpu eth battery  date  powermenu
 
-separator = |
+separator = |		  
 
 tray-position = right
 tray-padding = 2
@@ -85,14 +76,6 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/cmus]
-type = custom/ipc
-hook-0 =  cat $HOME/.config/cmus/cmus_output
-initial = 1
-format-prefix = "CMUS: "
-format-prefix-foreground = ${colors.blue}
-click-right = cmus-remote -s
-click-left = cmus-remote -p
 
 [module/xwindow]
 type = internal/xwindow
@@ -133,9 +116,9 @@ format-mounted = <label-mounted>
 
 
 ;label-mounted =   %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-mounted =   %total%/%free%
+label-mounted =   %{F#ff80d5}%total%/%{F#00e6e6}%free%
 label-unmounted =   %mountpoint%  
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = ${colors.unmount}
 
 [module/bspwm]
 type = internal/bspwm
@@ -143,7 +126,7 @@ type = internal/bspwm
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 3
 
 label-occupied = %index%
 label-occupied-padding = 2
@@ -166,30 +149,39 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-pin-workspaces = true
+;pin-workspaces = true
+
+ws-icon-0 = 1; 
+ws-icon-1 = 2; 
+ws-icon-2 = 3; 
+ws-icon-3 = 4; 
+ws-icon-4 = 5; 
+ws-icon-5 = 6; 
+ws-icon-6 = 7; 
 
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %icon%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = 2
+label-unfocused-foreground = ${colors.grey}
 
 visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -296,7 +288,7 @@ date-alt = " %Y-%m-%d"
 time = %r
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix =   
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -306,7 +298,7 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
+label-volume =   %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted =   muted
@@ -372,23 +364,29 @@ format-charging-underline = #ffb52a
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-label-charging =   %percentage%%
+label-charging =   %percentage%%
 ;label-discharging = Discharging %percentage%%
 label-full = Fully charged
+label-charging-foreground = ${colors.green}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1-foreground = ${colors.yellow}
+ramp-capacity-2-foreground = ${colors.green}
+
+
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.cyan}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.green}
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
@@ -425,7 +423,7 @@ format-spacing = 1
 
 label-open = 
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close =   cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
@@ -454,7 +452,7 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 0
-margin-bottom = 3 
+margin-top = 5
+margin-bottom = 0 
 
 ; vim:ft=dosini
