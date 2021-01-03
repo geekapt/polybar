@@ -4,16 +4,16 @@
 <p> unifont		-	aur	</p>
 
 # gpg Errors while installing unifont
-echo "keyserver hkps://keyserver.ubuntu.com" >> $HOME/.gnupg/gpg.conf
+<p>echo "keyserver hkps://keyserver.ubuntu.com" >> $HOME/.gnupg/gpg.conf</p>
 
-#setup instruction
-https://github.com/polybar/polybar/wiki
+# setup instruction
+<p>https://github.com/polybar/polybar/wiki</p>
 
-#Install My config
-1> bash -c "bash <(curl -sL https://raw.githubusercontent.com/2x02/polybar/main/install.sh)"
-2> Then execute bash ~/.config/polybar/launch.sh to launch Polybar.
+# Install My config
+<p> bash -c "bash <(curl -sL https://raw.githubusercontent.com/2x02/polybar/main/install.sh)"</p>
+<p> Then execute bash ~/.config/polybar/launch.sh to launch Polybar.</p>
 
-#My polybar config
+# My polybar config
 <p align="center">
   <img src="1.png" alt="Polybar">
 </p>
