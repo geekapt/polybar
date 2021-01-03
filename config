@@ -11,12 +11,15 @@ unmount = #80ffff1a
 primary = #66ffb3
 secondary =#ff3300
 alert = #bd6640
+<<<<<<< HEAD
 cyan = #00BCD4
 red = #FF5252
 yellow = #C9BC0E
 lightgreen = #4DB6AC
 green = #23ff00
 grey = #475359
+=======
+>>>>>>> 0dd1daacd40e64792b6b936e474b9d88de5ad382
 
 [bar/example]
 
