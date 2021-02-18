@@ -1,7 +1,9 @@
 # polybar Dependency fonts
+Fonts						Packages
 <p> ttf-font-awesome	-	pacman	</p>
-<p> siji		-	aur	</p>
-<p> unifont		-	aur	</p>
+<p> siji				-	aur	</p>
+<p> unifont				-	aur	</p>
+<p> mononoki Nerd		-	aur	</p>
 
 # gpg Errors while installing unifont
 <p>echo "keyserver hkps://keyserver.ubuntu.com" >> $HOME/.gnupg/gpg.conf</p>
