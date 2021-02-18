@@ -1,5 +1,4 @@
 # polybar Dependency fonts
-Fonts						Packages
 <p> ttf-font-awesome	-	pacman	</p>
 <p> siji				-	aur	</p>
 <p> unifont				-	aur	</p>
