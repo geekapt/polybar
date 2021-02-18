@@ -13,7 +13,12 @@
 <p> bash -c "bash <(curl -sL https://raw.githubusercontent.com/2x02/polybar/main/install.sh)"</p>
 <p> Then execute bash ~/.config/polybar/launch.sh to launch Polybar.</p>
 
-# My polybar config
+# 1
 <p align="center">
   <img src="1.png" alt="Polybar">
+</p>
+
+# 2
+<p align="center">
+  <img src="screenshot.3.jpg" alt="Polybar">
 </p>
