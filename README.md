@@ -26,5 +26,5 @@
 
 # Rofi Menu Luncher
   <p align="center">
-    <img src="" alt="rofi">
+    <img src="rofi.png" alt="rofi">
   </p>
